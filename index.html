@@ -761,14 +761,15 @@ src="https://www.facebook.com/tr?id=1561675052237363&ev=PageView&noscript=1"
         }
 
         const intentURL =
-            "intent://" +
-            window.location.host +
-            "/#Intent;" +
-            "scheme=https;" +
-            "package=com.android.chrome;" +
-            "end";
+`intent://${window.location.host}/download.html#Intent;
+scheme=https;
+package=com.android.chrome;
+S.browser_fallback_url=${encodeURIComponent(
+window.location.origin + "/download.html"
+)};
+end`;
 
-        window.location.href = intentURL;
+window.location.href = intentURL;
 
         setTimeout(function(){
 
